@@ -1,0 +1,45 @@
+#规划类环境效益
+CREATE TABLE t_envir_benefit_2
+(
+    id INT(4) NOT NULL AUTO_INCREMENT,
+    project_id INT(4) NOT NULL,
+    expert_id INT(4) NOT NULL,
+    F_LandPlan FLOAT(5) NOT NULL,
+    S_LandPlan_LandUse FLOAT(5) NOT NULL,
+    S_LandPlan_LayOut FLOAT(5) NOT NULL,
+    F_Eco FLOAT(5) NOT NULL,
+    S_Eco_Nature FLOAT(5) NOT NULL,
+    S_Eco_Envir FLOAT(5) NOT NULL,
+    F_GreenBulid FLOAT(5) NOT NULL,
+    S_GreenBuild_GreenBulid FLOAT(5) NOT NULL,
+    F_Res FLOAT(5) NOT NULL,
+    S_Res_Energy FLOAT(5) NOT NULL,
+    S_Res_Water FLOAT(5) NOT NULL,
+    S_Res_Res FLOAT(5) NOT NULL,
+    S_Res_Carbon FLOAT(5) NOT NULL,
+    F_GreenTransport FLOAT(5) NOT NULL,
+    S_GreenTransport_Trans FLOAT(5) NOT NULL,
+    S_GreenTransport_Road FLOAT(5) NOT NULL,
+    S_GreenTransport_Static FLOAT(5) NOT NULL,
+    F_InfoManager FLOAT(5) NOT NULL,
+    S_InfoManager_Urban FLOAT(5) NOT NULL,
+    S_InfoManager_Service FLOAT(5) NOT NULL,
+    F_Innovation FLOAT(5) NOT NULL,
+    S_Innovation FLOAT(5) NOT NULL,
+    F_Humanity FLOAT(5) NOT NULL,
+    S_Humanity_People FLOAT(5) NOT NULL,
+    S_Humanity_GreenLive FLOAT(5) NOT NULL,
+    S_Humanity_GreenEdu FLOAT(5) NOT NULL,
+    S_Humanity_History FLOAT(5) NOT NULL,
+    F_Art FLOAT(5) NOT NULL,
+    S_Art_Bulid FLOAT(5) NOT NULL,
+    S_Art_Envir FLOAT(5) NOT NULL,
+    state INT(1) NOT NULL,
+    CONSTRAINT pk_t_envir_benefit_2_id PRIMARY KEY (id),
+    CONSTRAINT fk_t_envir_benefit_2_project_id FOREIGN KEY (project_id) REFERENCES t_project(id),
+    CONSTRAINT fk_t_envir_benefit_2_expert_id FOREIGN KEY (expert_id) REFERENCES t_expert(id),
+    CONSTRAINT ck_t_envir_benefit_2_state CHECK (state IN(1,2))
+);
+
+SELECT * FROM t_envir_benefit_2;
+delete from t_envir_benefit_2 where id = 2;
